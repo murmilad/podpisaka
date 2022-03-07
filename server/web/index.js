@@ -297,7 +297,7 @@ var parser = parse({
       })
     }
 
-  }, 1000 * 60 * 10);
+  }, 1000 * 3);//60 * 10);
 
   // catch 404
   app.use((req, res, next) => {
