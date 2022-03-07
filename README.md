@@ -1,7 +1,8 @@
 # Using
 ## Images folder
 * every image has unique name
-* images folders structure
+* make folder 'resume'
+* images folders structure inside 'resume'
     * <Album #1 name>
         * <Image #1>
         * <Image #2>
