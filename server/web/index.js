@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 8000
 
 const GALLERY_PATH = '/usr/src/podpisaka/gallery'
 const RESUME_FOLDER = 'resume'
-const RESUME_FILE = 'resume_test.txt'
+const RESUME_FILE = 'resume_test_2.txt'
 
 var fs = require('fs');
 var { parse } = require('csv-parse');
@@ -23,6 +23,15 @@ const client = new Client({
   password: 'postgres',
   port: process.env.DB_PORT || 5559,
 })
+
+// Touch file
+const time = new Date();
+
+try {
+  fs.utimesSync(GALLERY_PATH + '/' + RESUME_FOLDER + '/' + RESUME_FILE, time, time);
+} catch (err) {
+  fs.closeSync(fs.openSync(GALLERY_PATH + '/' + RESUME_FOLDER + '/' + RESUME_FILE, 'w'));
+}
 
 var parser = parse({
   columns: true,
