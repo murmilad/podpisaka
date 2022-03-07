@@ -19,17 +19,17 @@ cd server; docker-compose build; docker-compose up -d
 ```
 ## Use the application
 * setup your server connection
-<img src="https://github.com/murmilad/podpisaka/blob/master/images/password.png?raw=true" style="width:200px;"/>
+<img src="https://github.com/murmilad/podpisaka/blob/master/images/password.png?raw=true" style="width:300px;"/>
 * login to your server 
-<img src="https://github.com/murmilad/podpisaka/blob/master/images/login.png?raw=true" style="width:200px;"/>
+<img src="https://github.com/murmilad/podpisaka/blob/master/images/login.png?raw=true" style="width:300px;"/>
 * lookup your gallery 
-<img src="https://github.com/murmilad/podpisaka/blob/master/images/gallery.png?raw=true" style="width:200px;"/>
+<img src="https://github.com/murmilad/podpisaka/blob/master/images/gallery.png?raw=true" style="width:300px;"/>
 * navigate your album 
-<img src="https://github.com/murmilad/podpisaka/blob/master/images/album.png?raw=true" style="width:200px;"/>
+<img src="https://github.com/murmilad/podpisaka/blob/master/images/album.png?raw=true" style="width:300px;"/>
 * look your image 
-<img src="https://github.com/murmilad/podpisaka/blob/master/images/art.png?raw=true" style="width:200px;"/>
+<img src="https://github.com/murmilad/podpisaka/blob/master/images/art.png?raw=true" style="width:300px;"/>
 * sign your image 
-<img src="https://github.com/murmilad/podpisaka/blob/master/images/sign.png?raw=true" style="width:200px;"/>
+<img src="https://github.com/murmilad/podpisaka/blob/master/images/sign.png?raw=true" style="width:300px;"/>
 
 ## Here you have an resume.txt with your signs for your pleasure
 
