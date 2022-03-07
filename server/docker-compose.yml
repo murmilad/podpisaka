@@ -1,0 +1,26 @@
+version: "3.6"
+services:
+  # DB
+  db:
+    build:
+      context: ./db
+    ports:
+      - ${DB_PORT}:5432
+
+  # WEB
+  web:
+    user: "${UID}:${GID}"
+    environment:
+      - DB_HOST
+      - DB_PORT
+      - PORT
+    build:
+      context: ./web
+    depends_on:
+      - db
+    ports:
+      - ${PORT}:${PORT}
+    volumes: 
+      - ${GALLERY_PATH}:/usr/src/podpisaka/gallery
+volumes:
+  etw-data-volume:
