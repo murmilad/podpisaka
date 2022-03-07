@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 8000
 
 const GALLERY_PATH = '/usr/src/podpisaka/gallery'
 const RESUME_FOLDER = 'resume'
-const RESUME_FILE = 'resume.txt'
+const RESUME_FILE = 'resume_test_2.txt'
 
 var fs = require('fs');
 var { parse } = require('csv-parse');
@@ -265,9 +265,9 @@ var parser = parse({
     let foundResume = await client.query('SELECT * FROM resume WHERE name = $1', [imageName])
     if (foundResume.rows.length > 0) {
       
-      await client.query('UPDATE resume SET resume = $2, ignored = $3 WHERE name = $1', [imageName, resume, ignored])
+      await client.query('UPDATE resume SET resume = $2, ignored = $3 WHERE name = $1', [imageName, resume ? resume : '', ignored ? true : false])
     } else {
-      await client.query('INSERT INTO resume(name, resume, ignored) VALUES($1, $2, $3)', [imageName, resume, ignored])
+      await client.query('INSERT INTO resume(name, resume, ignored) VALUES($1, $2, $3)', [imageName, resume ? resume : '', ignored ? true : false])
     }
 
     return res.json({status: 'ok'});
