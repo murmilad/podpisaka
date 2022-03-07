@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 8000
 
 const GALLERY_PATH = '/usr/src/podpisaka/gallery'
 const RESUME_FOLDER = 'resume'
-const RESUME_FILE = 'resume_test_2.txt'
+const RESUME_FILE = 'resume.txt'
 
 var fs = require('fs');
 var { parse } = require('csv-parse');
