@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 8000
 
 const GALLERY_PATH = '/usr/src/podpisaka/gallery'
 const RESUME_FOLDER = 'resume'
-const RESUME_FILE = 'resume_test_2.txt'
+const RESUME_FILE = 'resume.txt'
 
 var fs = require('fs');
 var { parse } = require('csv-parse');
@@ -297,7 +297,7 @@ var parser = parse({
       })
     }
 
-  }, 1000 * 3);//60 * 10);
+  }, 1000 * 60 * 10);
 
   // catch 404
   app.use((req, res, next) => {
@@ -320,4 +320,3 @@ process.on('SIGINT', function() {
   exec('npm stop');
   process.exit(0);
 });
-//sudo mount -v -t nfs -o vers=4.0 192.168.1.65:/tmp/gfgallery /home/alex/git/podpisaka/server/gallery
