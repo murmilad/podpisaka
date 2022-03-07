@@ -30,7 +30,7 @@ const time = new Date();
 try {
   fs.utimesSync(GALLERY_PATH + '/' + RESUME_FOLDER + '/' + RESUME_FILE, time, time);
 } catch (err) {
-  fs.closeSync(fs.openSync(GALLERY_PATH + '/' + RESUME_FOLDER + '/' + RESUME_FILE, 'w'));
+//  fs.closeSync(fs.openSync(GALLERY_PATH + '/' + RESUME_FOLDER + '/' + RESUME_FILE, 'w'));
 }
 
 var parser = parse({
