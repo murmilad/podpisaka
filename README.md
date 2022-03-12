@@ -18,7 +18,7 @@ Why you have two separate PHOTO and GALLERY folders
 * checkout server
 * configure .env
     * set GALLERY_PATH wirh your GALLERY folder path
-    * set PHOTO_PATH wirh your PHOTO folder path
+    * set PHOTO_PATH wirh your PHOTO folder path (set GALLERY folder if not exists)
     * build and start server
 ```bash
 cd server; docker-compose build; docker-compose up -d
