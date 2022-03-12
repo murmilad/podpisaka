@@ -5,7 +5,7 @@ Why you have two separate PHOTO and GALLERY folders
 * GALLERY folder for gallery photo only. And only that photos will in Polpisaka application
 ## Images folder
 * every image has unique name
-* make folder 'res*ume'
+* make folder 'resume'
 * images folders structure inside 'resume'
     * <Album #1 name>
         * <Image #1>
