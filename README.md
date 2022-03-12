@@ -1,7 +1,11 @@
 # Using
+## Two images folders?
+Why you have two separate PHOTO and GALLERY folders
+* PHOTO folder for all your photo in HI res
+* GALLERY folder for gallery photo only. And only that photos will in Polpisata application
 ## Images folder
 * every image has unique name
-* make folder 'resume'
+* make folder 'res*ume'
 * images folders structure inside 'resume'
     * <Album #1 name>
         * <Image #1>
@@ -13,7 +17,8 @@
 ## Setup server
 * checkout server
 * configure .env
-    * set GALLERY_PATH wirh your images folder path
+    * set GALLERY_PATH wirh your GALLERY folder path
+    * set PHOTO_PATH wirh your PHOTO folder path
     * build and start server
 ```bash
 cd server; docker-compose build; docker-compose up -d

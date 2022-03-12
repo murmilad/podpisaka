@@ -22,5 +22,6 @@ services:
       - ${PORT}:${PORT}
     volumes: 
       - ${GALLERY_PATH}:/usr/src/podpisaka/gallery
+      - ${PHOTO_PATH}:/usr/src/podpisaka/photo
 volumes:
   etw-data-volume:

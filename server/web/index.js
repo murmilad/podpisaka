@@ -4,10 +4,12 @@ const bodyParser = require('body-parser')
 const { exec } = require('child_process')
 const sizeOf = require('image-size')
 const checksum = require("json-checksum")
+const dirTree = require('directory-tree');
 
 const PORT = process.env.PORT || 8000
 
 const GALLERY_PATH = '/usr/src/podpisaka/gallery'
+const PHOTO_PATH = '/usr/src/podpisaka/photo'
 const RESUME_FOLDER = 'resume'
 const RESUME_FILE = 'resume.txt'
 
@@ -32,6 +34,13 @@ try {
 } catch (err) {
   fs.closeSync(fs.openSync(GALLERY_PATH + '/' + RESUME_FOLDER + '/' + RESUME_FILE, 'w'));
 }
+
+var photoPaths = {}
+
+const tree = dirTree(PHOTO_PATH, {extensions:/\.(jpg|jpeg|png|gif)$/}, (item) => {
+  photoPaths[item.name] = item.path;
+});
+
 
 var parser = parse({
   columns: true,
@@ -241,8 +250,15 @@ var parser = parse({
       .forEach(folder => {
 
         if (fs.existsSync(albumPath + '/' + folder + '/' + file)) {
-          let bitmap = fs.readFileSync(albumPath + '/' + folder + '/' + file)
-          let dimensions = sizeOf(albumPath + '/' + folder + '/' + file)
+          let bitmap;
+          let dimensions;
+          if (photoPaths[file]) {
+            bitmap = fs.readFileSync(photoPaths[file])
+            dimensions = sizeOf(photoPaths[file])
+          } else {
+            bitmap = fs.readFileSync(albumPath + '/' + folder + '/' + file)
+            dimensions = sizeOf(albumPath + '/' + folder + '/' + file)
+          }
 
           imageData.image = Buffer.from(bitmap).toString('base64')
           imageData.size = {width: dimensions.width, height: dimensions.height}
