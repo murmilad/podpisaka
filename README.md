@@ -2,7 +2,7 @@
 ## Two images folders?
 Why you have two separate PHOTO and GALLERY folders
 * PHOTO folder for all your photo in HI res
-* GALLERY folder for gallery photo only. And only that photos will in Polpisata application
+* GALLERY folder for gallery photo only. And only that photos will in Polpisaka application
 ## Images folder
 * every image has unique name
 * make folder 'res*ume'
